@@ -81,7 +81,14 @@ data = urllib.request.urlopen(full_url)
 ![](http://7xlyu9.com1.z0.glb.clouddn.com/15-9-23/90523066.jpg)
 
 ##3. 伪装浏览器
-
+```
+user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windos NT)'
+#urllib.request.urlencode(user_agent)
+headers = {'User-Agent': user_agent}	
+req = urllib.request.Request(url, headers=headers)  
+response = urllib.request.urlopen(req)
+```
+- 注意[headers=headers](http://stackoverflow.com/questions/22403871/content-length-should-be-specified-for-iterable-data-of-type-class-dict)
 
 ##- 问题与解决问题
 
