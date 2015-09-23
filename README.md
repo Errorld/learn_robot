@@ -35,6 +35,7 @@ print(the_page)
 一般的HTML表单，data需要编码成标准形式。然后做为data参数传到Request对象。
 编码工作使用urllib的函数而非urllib2。
 我们新建一个文件urllib2_test03.py来感受一下：
+
 ```
 import urllib
 import urllib.request
@@ -51,6 +52,7 @@ the_page = response.read()
 >>> print(test)
 ff=ffff&dfdsaf=fasdf    #编码成header形式
 ```
+
 > 通过fiddler查看header
 ![](http://7xlyu9.com1.z0.glb.clouddn.com/15-9-23/67467394.jpg)
 ![](http://7xlyu9.com1.z0.glb.clouddn.com/15-9-23/58314171.jpg)
@@ -59,6 +61,7 @@ ff=ffff&dfdsaf=fasdf    #编码成header形式
 GET和POST请求的不同之处是POST请求通常有"副作用"，
 它们会由于某种途径改变系统状态(例如提交成堆垃圾到你的门口)。
 Data同样可以通过在Get请求的URL本身上面编码来传送。
+
 ```
 import urllib.request    
 import urllib  
