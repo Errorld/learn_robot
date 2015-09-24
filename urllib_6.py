@@ -4,7 +4,7 @@ password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
 
 #伪装浏览器
 target = 'http://192.168.1.1'
-user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windos NT)'
+user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36'
 headers = {'User-Agent': user_agent}
 req = urllib.request.Request(target, headers=headers)
 
