@@ -25,12 +25,12 @@ class Spider_Model:
         myPage = myResponse.read()
         #encode的作用是将unicode编码转换成其他编码的字符串
         #decode的作用是将其他编码的字符串转换成unicode编码
-        unicodePage = myPage#.decode("utf-8")
+        unicodePage = myPage.decode("utf-8",'ignore')
         #print unicodePage
         
         # 找出所有class="content"的div标记
         #re.S是任意匹配模式，也就是.可以匹配换行符
-        myItems = re.findall(b'<div class="content">(.*?)<!--',unicodePage,re.S | re.M)
+        myItems = re.findall(r'<div class="content">(.*?)<!--',unicodePage,re.S | re.M)
         items = []
         for item in myItems:
             # item 中第一个是div的标题，也就是时间
@@ -59,7 +59,7 @@ class Spider_Model:
     def ShowPage(self,nowPage,page):
         for items in nowPage:
             print(u'\n 第%d页' % page , items)
-            myInput = raw_input()
+            myInput = input()
             if myInput == "quit":
                 self.enable = False
                 break
